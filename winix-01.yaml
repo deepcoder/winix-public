@@ -1,0 +1,7 @@
+# winix-01.yaml
+# 202011051737  
+
+units:
+  "NB01" : {"home" : "North Beach", "room" : "Living Room",   "key" : "xxx111_zzzzzz", "mac_address" : "0C:72:07:BB:42:AA", "ip_address" : "192.168.1.110"}
+  "NB02" : {"home" : "North Beach", "room" : "Small Bedroom", "key" : "xxx222_zzzzzz", "mac_address" : "0C:72:07:22:33:00", "ip_address" : "192.168.1.118"}
+
