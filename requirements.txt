@@ -1,0 +1,5 @@
+# requirements.txt for winix-01.py
+# 202011051733 
+paho-mqtt
+PyYAML
+python-dateutil
