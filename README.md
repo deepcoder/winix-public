@@ -1,5 +1,25 @@
 # winix-public
-Python 3 program that download Winix C545 status from cloud and publishes to MQTT
+Python 3 program that download Winix C545 status from cloud and publishes to MQTT for used with:
+
+@home-assistant
+
+@homebridge
+
+Built on the strong work and shoulders of these fine github contributors:
+
+@hfern
+
+https://github.com/hfern/winix
+
+@evandcoleman
+
+https://github.com/evandcoleman/python-winix
+
+@banzalik
+
+https://github.com/banzalik/homebridge-winix-c545
+
+And Costco for the sale on these devices before the fires!
 
 Winix air purifiers listed in winix-01.yaml
 
@@ -71,4 +91,17 @@ Data retrieved from unit and published to MQTT in JSON:
     ]
   }
 }
+```
+Basic decode of known attributes received for C545:
+```
+attributes:
+A02 : Power
+A03 : Operation mode
+A04 : Fan speed/sleep
+A05 : UNKNOWN
+A07 : Plasmawave
+A21 : Filter age in hours
+S07 : Air quality ordinal
+S08 : Air quality measure
+S14 : Ambient light
 ```
