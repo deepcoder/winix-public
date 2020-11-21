@@ -1,5 +1,7 @@
-# requirements.txt for winix-01.py
-# 202011051733 
+# requirements.txt for winix-02.py
+# 202011202302
 paho-mqtt
 PyYAML
 python-dateutil
+timeloop
+
