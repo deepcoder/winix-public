@@ -1,0 +1,25 @@
+# winix-02.yaml
+# 202011202237   
+
+# debugging to file level
+# Value:
+# CRITICAL (and above)
+# ERROR    (and above)
+# WARNING  (and above)
+# INFO     (and above)
+# DEBUG    (and above)
+# NOTSET   (and above)
+debug_level: "INFO"
+# mqtt server IP address string
+mqtt: "192.168.aaa.bbb"
+# base topic for status and commands
+mqtt_topic: "winix"
+# put empty string for no remote logging
+rsyslog: "192.168.ccc.ddd"
+# period in minutes between checking status of each unit
+check_interval: 5
+# winix units, important values are "key" and "mac_address", remainder are currently just informational
+units:
+  "SB01" : {"home" : "My Home", "room" : "Living Room",   "key" : "aaaaaaa_bbbbbbb", "mac_address" : "aa:bb:cc:dd:ee:ff", "ip_address" : "192.168.aaa.bbb"}
+  "SB02" : {"home" : "My Home", "room" : "Small Bedroom", "key" : "cccccccc_dddddddd", "mac_address" : "mm:nn:pp:qq:rr:ss", "ip_address" : "192.168.ccc.ddd"}
+
