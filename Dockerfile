@@ -1,5 +1,5 @@
-# winix-01
-# 202011051733
+# winix-02
+# 202011202302 
 
 FROM python:3
 ENV PIP_NO_CACHE_DIR=1
@@ -24,5 +24,5 @@ RUN pip install -r requirements.txt
 
 STOPSIGNAL SIGINT
 
-CMD [ "python", "/home/user/winix/winix-01.py" ]
+CMD [ "python", "/home/user/winix/winix-02.py" ]
 
