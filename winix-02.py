@@ -1,19 +1,20 @@
 #! /usr/bin/env python3
 #
 # winix-02.py
-# 202011210040           
+# 202011231851            
 #
 
 #
 PROGRAM_NAME = "winix-02"
 VERSION_MAJOR = "1"
-VERSION_MINOR = "10"
+VERSION_MINOR = "12"
 WORKING_DIRECTORY = "/home/user/winix/"
 # 
 # 
 #
 
 import sys
+import cProfile
 
 # check version of python
 if not (sys.version_info.major == 3 and sys.version_info.minor >= 6):
@@ -517,15 +518,13 @@ def main():
             if current_day != datetime.now().timetuple().tm_yday :
                 my_logger.info("24 hour rollover")
                 current_day = datetime.now().timetuple().tm_yday
-
-            # see if there are any queued requests for an status update for a unit from the winix cloud
-            # if so request it now
             try :
                 unit_mac = queue_unit_request_update.get(block=False)
                 my_logger.debug("queue request for :" + unit_mac + " requesting update")
                 get_unit_update(unit_mac)
             except queue.Empty :
-                continue
+                # break, continue and pass. pass seems the proper action for nothing in queue
+                pass
 
             time.sleep(1)
         # end loop forever
@@ -552,4 +551,5 @@ def main():
 
 if __name__ == '__main__':
    main()
-
+# if __name__ == '__main__':
+#     cProfile.run('main()')
