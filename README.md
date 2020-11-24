@@ -8,15 +8,21 @@ The program is run from the 'real' directory on host machine, I do NOT copy the 
 
 MQTT topic base in in config file. Each unit in config file publishes it information under base topic followed by it's MAC address, for example:
 
+```
 winix/11:22:33:44:55:66
+```
 
 each unit looks for control command under the sup topic /control, for example:
 
+```
 winix/11:22:33:44:55:66/control/"command"
+```
 
 for example to power the unit on, the MQTT topic for unit with MAC address 11:22:33:44:55:66 is:
 
+```
 winix/11:22:33:44:55:66/control/power
+```
 
 with a message of "ON"
 
@@ -24,7 +30,9 @@ all message are strings NOT numbers.
 
 You can run it without Docker, as long as you have all the python 3 pip3 requirements.txt installed:
 
+```
 python3 winix02.py
+```
 
 or build a docker container with the pip3 requirements.
 
@@ -32,8 +40,11 @@ Docker information:
 ```
 docker build -t winix02 .
 
+# remove current docker container first
+
 ./docker-run.sh
 ```
+
 ```
 MQTT commands:
 
