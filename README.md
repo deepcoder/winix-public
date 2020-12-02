@@ -1,5 +1,25 @@
 # winix
 Winix python program to get current status of Winix air purifier units and publish to MQTT.
+
+@home-assistant
+
+@homebridge
+
+Built on the strong work and shoulders of these fine github contributors:
+
+@hfern
+
+https://github.com/hfern/winix
+
+@evandcoleman
+
+https://github.com/evandcoleman/python-winix
+
+@banzalik
+
+https://github.com/banzalik/homebridge-winix-c545
+
+
 MQTT topic and server, syslog server, logging, and update period are configured in file : winix-02.yaml
 
 Python 3 program downloads the data from Winix air purifiers listed in  winix-02.yaml
