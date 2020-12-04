@@ -1,5 +1,5 @@
 # winix
-Winix python program to get current status of Winix air purifier units and publish to MQTT.
+Winix python program to get current status of Winix air purifier units and publish to MQTT, also allows you to publish MQTT topics to Winix cloud to control your units.
 
 Requires Python version 3.7
 
