@@ -36,7 +36,7 @@ Python 3 program downloads the data from Winix air purifiers listed in  winix-02
 
 The program is run from the 'real' directory on host machine, I do NOT copy the python program into the docker container, this is why the --user command is necessary to make sure the 'user' user inside the docker container has rights to write to the log files in the real home directory for the app.
 
-MQTT topic base in in config file. Each unit in config file publishes it information under base topic followed by it's MAC address, for example:
+MQTT topic base in in config file. Each unit in config file publishes its information under base topic followed by it's MAC address, for example:
 
 ```
 winix/11:22:33:44:55:66
