@@ -1,14 +1,18 @@
 #! /usr/bin/env python3
 #
 # winix-02.py
-# 202011231851            
+# 202012031810             
 #
 
 #
 PROGRAM_NAME = "winix-02"
 VERSION_MAJOR = "1"
-VERSION_MINOR = "12"
+VERSION_MINOR = "13"
 WORKING_DIRECTORY = "/home/user/winix/"
+# winix URL's
+GET_STATUS_URL = "https://us.api.winix-iot.com/common/event/sttus/devices/"
+COMMAND_URL = "https://us.api.winix-iot.com/common/control/devices/"
+
 # 
 # 
 #
@@ -17,25 +21,19 @@ import sys
 import cProfile
 
 # check version of python
-if not (sys.version_info.major == 3 and sys.version_info.minor >= 6):
-    print("This script requires Python 3.6 or higher!")
+if not (sys.version_info.major == 3 and sys.version_info.minor >= 7):
+    print("This script requires Python 3.7 or higher!")
     print("You are using Python {}.{}.".format(sys.version_info.major, sys.version_info.minor))
     sys.exit(1)
 #print("{} {} is using Python {}.{}.".format(PROGRAM_NAME, PROGRAM_VERSION, sys.version_info.major, sys.version_info.minor))
 
 
-# import base64
-# import hashlib
 import json
 from urllib import request
-
-# from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
-# from cryptography.hazmat.backends import default_backend
 
 import traceback
 from pathlib import Path
 import yaml
-# import csv
 import queue
 from dateutil.parser import parse
 import paho.mqtt.client as mqtt
@@ -131,7 +129,7 @@ if (RSYSLOG_SERVER != "") :
 
 logging_level_file = logging.getLevelName('DEBUG')
 root_logger.setLevel(logging_level_file)
-# how often to check the winix cloud for updated from each unit, becareful to not be to quick at updates
+# how often to check the winix cloud for updated from each unit, be careful to not be to quick at updates
 # this is in minutes
 CHECK_PERIOD_MINUTES = PROGRAM_CONFIG.get("check_interval", 5)
 
@@ -151,10 +149,6 @@ for unit in UNITS :
 
 # global dictionary to keep track of current state of each unit
 UNITS_BY_MAC_STATE = {}
-
-# winix URL's
-GET_STATUS_URL = "https://us.api.winix-iot.com/common/event/sttus/devices/"
-COMMAND_URL = "https://us.api.winix-iot.com/common/control/devices/"
 
 # debug, check that the YAML reads and massaging are correct
 my_logger.debug("MQTT_SERVER          :" + str(MQTT_SERVER))
